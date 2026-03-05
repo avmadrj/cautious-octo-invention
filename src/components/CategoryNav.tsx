@@ -19,7 +19,9 @@ interface CategoryNavProps {
   onViewChange: (view: string) => void
 }
 
-const categoryIcons: Record<string, any> = {
+import type { ElementType } from "react"
+
+const categoryIcons: Record<string, ElementType> = {
   "Fundamentos do Direito Internacional": Scales,
   "História do Direito Internacional": BookOpen,
   "Tribunais Internacionais e Jurisprudência": Gavel,
