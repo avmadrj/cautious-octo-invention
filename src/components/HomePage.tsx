@@ -1,6 +1,5 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
 import { ResourceCard } from "./ResourceCard"
 import { Books, Scales, GraduationCap, Globe, ArrowRight } from "@phosphor-icons/react"
 import type { Resource } from "@/lib/types"
