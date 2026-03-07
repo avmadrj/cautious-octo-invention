@@ -4,10 +4,12 @@
 # To make your custom agent available, merge the completed agent file (not this template) into the default repository branch.
 # For format details, see: https://gh.io/customagents/config
 
-name:
-description:
+name: "My Agent"
+description: "A brief description of what this agent does"
 ---
 
 # My Agent
 
-Describe what your agent does here...
+Describe what your agent does here.
+
+**Important:** Remember to update both the `name` field in the frontmatter above and the `# My Agent` heading to match your agent's name.
