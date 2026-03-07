@@ -52,6 +52,7 @@ export function SearchFilter({
             size="sm"
             className="absolute right-1 top-1/2 -translate-y-1/2 h-7 w-7 p-0"
             onClick={() => onSearchChange("")}
+            aria-label="Clear search query"
           >
             <X size={16} />
           </Button>
@@ -105,7 +106,7 @@ export function SearchFilter({
       {hasActiveFilters && (
         <div className="flex justify-end">
           <Button variant="outline" size="sm" onClick={onClearFilters} className="gap-2">
-            <X size={16} />
+            <X size={16} aria-hidden="true" />
             Limpar Filtros
           </Button>
         </div>
