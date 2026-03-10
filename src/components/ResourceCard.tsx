@@ -1,3 +1,4 @@
+import { memo } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -8,7 +9,7 @@ interface ResourceCardProps {
   resource: Resource
 }
 
-export function ResourceCard({ resource }: ResourceCardProps) {
+export const ResourceCard = memo(function ResourceCard({ resource }: ResourceCardProps) {
   return (
     <Card className="h-full flex flex-col transition-all duration-300 hover:shadow-lg hover:border-accent/50">
       <CardHeader>
@@ -36,4 +37,4 @@ export function ResourceCard({ resource }: ResourceCardProps) {
       </CardContent>
     </Card>
   )
-}
+})

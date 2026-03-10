@@ -1,3 +1,4 @@
+import { useMemo } from "react"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ResourceCard } from "./ResourceCard"
@@ -12,11 +13,14 @@ interface HomePageProps {
 
 export function HomePage({ resources, onCategoryClick }: HomePageProps) {
   const featuredResources = resources.slice(0, 3)
-  
-  const categoryCount = CATEGORIES.reduce((acc, category) => {
-    acc[category] = resources.filter(r => r.category === category).length
-    return acc
-  }, {} as Record<string, number>)
+
+  const categoryCount = useMemo(() => {
+    const counts: Record<string, number> = {}
+    for (const resource of resources) {
+      counts[resource.category] = (counts[resource.category] ?? 0) + 1
+    }
+    return counts
+  }, [resources])
 
   return (
     <div className="space-y-12">
