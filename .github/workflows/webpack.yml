@@ -22,6 +22,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
+    - name: Install Wix CLI
+      run: npm install -g @wix/cli  # Install Wix CLI globally for Wix app development tasks
+
     - name: Build
       run: |
         npm install
