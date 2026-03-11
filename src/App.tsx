@@ -29,13 +29,14 @@ function App() {
 
   const filteredResources = useMemo(() => {
     if (!resources) return []
+    const normalizedQuery = searchQuery.toLowerCase()
     return resources.filter(resource => {
-      const matchesSearch = searchQuery === "" || 
-        resource.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        resource.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        resource.institution.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        resource.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        resource.keywords?.some(k => k.toLowerCase().includes(searchQuery.toLowerCase()))
+      const matchesSearch = normalizedQuery === "" || 
+        resource.title.toLowerCase().includes(normalizedQuery) ||
+        resource.description.toLowerCase().includes(normalizedQuery) ||
+        resource.institution.toLowerCase().includes(normalizedQuery) ||
+        resource.category.toLowerCase().includes(normalizedQuery) ||
+        resource.keywords?.some(k => k.toLowerCase().includes(normalizedQuery))
 
       const matchesCategory = selectedCategory === "all" || resource.category === selectedCategory
       const matchesType = selectedType === "all" || resource.type === selectedType
