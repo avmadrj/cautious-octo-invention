@@ -28,6 +28,9 @@ jobs:
           node-version: "20"
           cache: "npm"
 
+      - name: Install Wix CLI
+        run: npm install -g @wix/cli  # Install Wix CLI globally for Wix app development tasks
+
       - name: Install dependencies
         run: npm ci
 
